@@ -1,0 +1,96 @@
+<head>
+  <title>shironimee.id</title>
+  <meta http-equiv="refresh" content="5;url=https://df18076b-0b43-43af-905e-48cf1842cc85-00-2rfhu0zixp4ke.worf.replit.dev/" <link rel=" icon"
+    href="logo.ico" type="image/x-icon">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      background-image: url('pxfuel.jpg');
+      /* Ganti 'pxfuel.jpg' dengan URL gambar Anda */
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: multiply;
+      /* Menggunakan multiply untuk menggelapkan latar belakang */
+    }
+
+    .overlay {
+      background-color: rgba(5, 5, 5, 0.7);
+      /* Ubah nilai alpha (0.5) untuk mengatur kegelapan */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    h1,
+    p {
+      color: #34d0ff;
+      text-align: center;
+      z-index: 1;
+      /* Pastikan teks tetap di depan overlay */
+    }
+
+    .error-message {
+      display: none;
+      color: red;
+    }
+
+    .error-message.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="loading-container">
+      <div class="loading-line-container">
+        <span class="loading-percent">100%</span>
+        <div class="loading-line startLoading"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay"></div>
+  <h2>Server dalam perbaikan!!</h2>
+  <!--- <h1>Waktu Gift sudah Habis!!, maaf yah!</h1> --->
+ <h1>Anda akan dialihkan ke ShiroNimee</h1>
+  <p>Jika tidak dialihkan secara otomatis, klik <a href="https://david-vocals-lincoln-stating.trycloudflare.com">di
+      sini</a>.</p>
+
+  <div class="error-message" id="error">
+    Terjadi masalah saat memuat halaman. Silakan coba lagi nanti.
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.querySelector('#error').classList.add('active');
+    }, 5000); // Menampilkan pesan error setelah 5 detik
+
+    const loadingPercent = document.querySelector(".loading-percent");
+    const loadingLineContainer = document.querySelector(".loading-line-container");
+
+    var percent = 0;
+    var loop = setInterval(() => {
+      if (percent != 100) {
+        percent++;
+        loadingPercent.innerText = `${percent}%`;
+      } else {
+        clearInterval(loop)
+        loadingLineContainer.style.boxShadow = "0px 0px 2px 3px rgba(25, 135, 84, .5)"
+        loadingLineContainer.style.borderColor = "rgba(25, 135, 84, .5)";
+        loadingPercent.innerText = `Done !`;
+      }
+    }, 40)
+  </script>
+</body>
+
+</html>
